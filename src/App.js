@@ -34,6 +34,14 @@ class App extends Component {
     }
 
   render() {
+    const style = {
+      backgroundColor: 'white',
+      padding: '8px',
+      cursor: 'Pointer',
+      border: '1px solid blue',
+      font: 'inherit'
+    };
+
     return (
       <div className="App">
         <h1>Hi, i'm react app</h1>
