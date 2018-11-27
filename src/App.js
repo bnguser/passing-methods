@@ -48,15 +48,11 @@ class App extends Component {
       font: 'inherit'
     };
 
-    return (
-      <div className="App">
-        <h1>Hi, i'm react app</h1>
-        <p>This is really working</p>
-        <button 
-        style = {style}
-        onClick ={this.togglePersonHandler}>Switch button</button>
-        
-        {this.state.showPersons === true ?
+    let persons = null;
+
+    if(this.state.showPersons)
+    {
+      persons = (
         <div>
           
              <Person 
@@ -72,8 +68,18 @@ class App extends Component {
              age = {this.state.persons[2].age}/>
           
        
-        </div> : null
-        }
+        </div> 
+      )
+    }
+
+    return (
+      <div className="App">
+        <h1>Hi, i'm react app</h1>
+        <p>This is really working</p>
+        <button 
+        style = {style}
+        onClick ={this.togglePersonHandler}>Switch button</button>
+        {persons}            
         
       </div>
     );
